@@ -16,7 +16,7 @@ create:
 	./src/helper/createJobs
 
 start-sql:
-	docker-compose -f docker-compose.$(env).yml up -d
+	docker-compose -f docker-compose.$(env).yml up -d db phpmyadmin
 
 stop-sql:
 	docker-compose -f docker-compose.$(env).yml down
