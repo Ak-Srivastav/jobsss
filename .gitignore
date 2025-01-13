@@ -26,4 +26,4 @@ yarn-error.log*
 # Miscellaneous
 *.swp
 *.swo
-*.nodemon.pid
+nodemon.pid
