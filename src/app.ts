@@ -3,12 +3,13 @@ import bodyParser from 'body-parser';
 import setJobRoutes from './routes/jobRoutes';
 import dotenv from 'dotenv';
 import { connectDB } from './config/database';
+import {setupSwagger} from "./config/swagger";
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-
+setupSwagger(app);
 app.use(bodyParser.json());
 
 // Connect to the database

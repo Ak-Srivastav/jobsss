@@ -10,6 +10,26 @@ const jobController = new JobController(jobService);
 const setJobRoutes = (app: any) => {
     app.use('/jobs', router);
 
+    /**
+     * @swagger
+     * /jobs:
+     *   post:
+     *     summary: Create a new job
+     *     requestBody:
+     *       required: true
+     *       content:
+     *         application/json:
+     *           schema:
+     *             type: object
+     *             properties:
+     *               title:
+     *                 type: string
+     *               description:
+     *                 type: string
+     *     responses:
+     *       201:
+     *         description: Job created
+     */
     router.post('/', (req, res) => jobController.createJob(req, res));
     router.get('/', (req, res) => jobController.getAllJobs(req, res));
     router.get('/:id', (req, res) => jobController.getJobById(req, res));
